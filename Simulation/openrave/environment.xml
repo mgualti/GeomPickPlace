@@ -1,0 +1,57 @@
+<Environment>
+  <camtrans>2.297793 0.004027 1.407393</camtrans>
+  <camrotationaxis>-0.658968 -0.653090 0.373141 138.362299</camrotationaxis>
+  <camfocal>2.594761</camfocal>
+  
+  <!-- Robot -->
+  <Robot file="ur5_with_gripper_85.xml" name="ur5">
+    <Translation>0.000 0.000 0.000</Translation>
+    <JointValues>0 -1.5707 0 0 0 0 0</JointValues>
+  </Robot>
+    
+  <!-- Sensor -->
+  <Robot name="sensor">
+    
+    <Translation>0.0 0.0 1.00</Translation>
+    
+    <KinBody>
+      <Body name="sensor_base" type="dynamic">
+        <Geom type="box" modifiable="false">
+          <Extents>0.005 0.005 0.005</Extents>
+          <Translation>0.00 0.00 -0.01</Translation>
+          <diffuseColor>0.50 0.50 0.00</diffuseColor>
+        </Geom>
+      </Body>
+    </KinBody>
+    
+    <AttachedSensor name="sensor">
+      <link>sensor_base</link>
+      <sensor type="BaseFlashLidar3D">
+        <maxrange>5</maxrange>
+        <scantime>0.0</scantime>
+        <color>1 1 0</color>
+        <!-- (KK[0] 0 KK[2]; 0 KK[1] KK[3]; 0 0 1] -->
+        <!-- rostopic echo /camera/ir/camera_info -->
+        <!-- K: [568.1509399414062, 0.0, 319.5, 0.0, 568.1509399414062, 239.5, 0.0, 0.0, 1.0] -->
+        <!-- https://www.vision.caltech.edu/bouguetj/calib_doc/htmls/parameters.html -->
+        <KK>220 220 64 64</KK> 
+        <width>128</width>
+        <height>128</height>
+      </sensor>
+    </AttachedSensor>
+  </Robot>
+    
+  <!-- Table -->
+  <KinBody name="table">
+    <Body type="static">
+      <Translation>0 0 -0.085</Translation>
+      <Geom type="box">
+        <extents>2.5 2.5 0.005</extents>
+        <translation>0 0 0</translation>
+        <diffuseColor>0.6 0.6 0.6</diffuseColor>
+      	<ambientColor>0.6 0.6 0.6</ambientColor>
+      </Geom>
+    </Body>
+  </KinBody>
+
+</Environment>

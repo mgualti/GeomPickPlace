@@ -1,0 +1,52 @@
+<Robot>
+  
+  <Robot file="ur5.dae" />
+  <Robot file="robotiq_85_collision.dae" />
+  
+  <KinBody name="gripper_85">
+    
+    <!-- gripper -->
+    <Body name="robotiq_arg2f_base_link">
+      <offsetfrom>ee_link</offsetfrom>
+      <translation>0.017 0 0</translation>
+      <rotationaxis>0 1 0 90</rotationaxis>
+      <!-- <rotationaxis>1 0 0 180</rotationaxis> -->
+      <Geom type="cylinder" modifiable="false">
+        <radius>0.0375</radius>
+        <height>0.017</height>
+        <rotationaxis>1 0 0 90</rotationaxis>
+        <Translation>0.000 0.000 -0.0085</Translation>
+        <diffuseColor>0.40 0.20 0.10</diffuseColor>
+      </Geom>
+    </Body>
+    
+    <!-- gripper center -->
+    <Body name="gripper_center">
+      <offsetfrom>robotiq_arg2f_base_link</offsetfrom>
+      <translation>0 0 0.1275</translation>
+      <rotationaxis>0 1 0 180</rotationaxis>
+    </Body>
+    
+    <!-- connect robotiq gripper to gripper_base -->
+    <Joint name="gripper_center_joint" type="hinge" enable="false">
+      <offsetfrom>robotiq_arg2f_base_link</offsetfrom>
+      <body>robotiq_arg2f_base_link</body>
+      <body>gripper_center</body>
+    </Joint>
+    
+    <!-- connect robotiq gripper to arm -->
+    <Joint name="robotiq_joint" type="hinge" enable="false">
+      <offsetfrom>ee_link</offsetfrom>
+      <body>ee_link</body>
+      <body>robotiq_arg2f_base_link</body>
+    </Joint>
+    
+  </KinBody>
+  
+  <!-- define base and effector links -->
+  <Manipulator name="arm">
+    <base>base_link</base>
+    <effector>gripper_center</effector>
+  </Manipulator>
+
+</Robot>
