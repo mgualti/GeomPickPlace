@@ -1,6 +1,6 @@
 # GeomPickPlace
 
-Code for reproducing experiments for the paper "Pick-and-Place With Uncertain Object Instance Segmentation and Shape Completion".
+Code for reproducing experiments for the paper "Pick-and-Place With Uncertain Object Instance Segmentation and Shape Completion": https://arxiv.org/abs/2010.07892.
 
 * **Authors:** Marcus Gualteri
 * **Version:** 1.0.0
