@@ -14,8 +14,8 @@ def main():
 
   downloadFolderName = "/home/mgualti/Downloads/"  
   
-  #category = "bottle"
-  #offset = "02876657"
+  category = "bottle"
+  offset = "02876657"
   #category = "bowl"
   #offset = "02880940"
   #category = "camera"
@@ -30,8 +30,8 @@ def main():
   #offset = "03797390"
   #category = "remote"
   #offset = "04074963"
-  category = "telephone"
-  offset = "04401088"
+  #category = "telephone"
+  #offset = "04401088"
   
   # RUN TEST =======================================================================================
   
@@ -47,6 +47,8 @@ def main():
   modelFolderNames = os.listdir(downloadFolderName + offset)
   
   if os.path.exists(downloadFolderName + category):
+    response = raw_input("Overwrite existing directory? (Y/N): ")
+    if response.lower() != "y": return
     shutil.rmtree(downloadFolderName + category)
   os.mkdir(downloadFolderName + category)
   
@@ -54,7 +56,7 @@ def main():
     print i, folderName
     shutil.copyfile(
       downloadFolderName + offset + "/" + folderName + "/models/model_normalized.obj",
-      downloadFolderName + category + "/" + str(i) + ".obj")
+      downloadFolderName + category + "/" + folderName + ".obj")
   
 
 if __name__ == "__main__":

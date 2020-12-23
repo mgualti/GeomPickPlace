@@ -26,7 +26,7 @@ def main():
   # training
   completionDirectory = "/home/mgualti/Data/GeomPickPlace/packing_places_train"
   modelFileName = "pcn_model_place_prediction_packing.h5"
-  pcnArchitecture = False
+  pcnArchitecture = True
   
   learningRateSchedule = [5.0e-4]*50 # packing, bottles, and blocks, PCN and PointNetGPD
   batchSizeSchedule = [32]*50 # packing, PCN and PointNetGPD

@@ -26,14 +26,14 @@ def main():
   # training
   completionDirectory = "/home/mgualti/Data/GeomPickPlace/packing_grasps_train"
   modelFileName = "pcn_model_grasp_prediction_packing.h5"
-  pcnArchitecture = False
+  pcnArchitecture = True
   
-  #learningRateSchedule = [5.0e-4]*100 # for packing, PCN
+  learningRateSchedule = [5.0e-4]*100 # for packing, PCN
   #learningRateSchedule = [1.0e-4]*50 # for bottles and blocks, PCN
-  learningRateSchedule = [1.0e-4]*100 # for packing, PointNetGPD
-  #batchSizeSchedule = [32]*100 # for packing, PCN
+  #learningRateSchedule = [1.0e-4]*100 # for packing, PointNetGPD
+  batchSizeSchedule = [32]*100 # for packing, PCN
   #batchSizeSchedule = [32]*50 # for bottles and blocks, PCN
-  batchSizeSchedule = [32]*100 # for packing, PointNetGPD
+  #batchSizeSchedule = [32]*100 # for packing, PointNetGPD
 
   # visualization/saving
   showSteps = False
