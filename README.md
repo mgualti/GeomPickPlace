@@ -1,6 +1,6 @@
 # GeomPickPlace
 
-Source code for the paper "Pick-and-Place With Uncertain Object Instance Segmentation and Shape Completion"
+Code for reproducing experiments for the paper "Pick-and-Place With Uncertain Object Instance Segmentation and Shape Completion".
 
 * **Authors:** Marcus Gualteri
 * **Version:** 1.0.0
@@ -29,9 +29,9 @@ Next, from the Simulation directory, open N terminals and run python/worker\_\*.
 
 Then, from the Simulation directory, edit python/place\_\*.py, and set showViewer = True and showSteps = True. This will visualize the simulation, which is important for the first time running it. Then, run python/place\_\*.py. If everything is satisfactory, set showViewer = False and showSteps = False and run the scenario. A mat file will be produced with the results. See the matlab folder for scripts for processing the results.
 
-## Robot
+## Running on a Real Robot
 
-A ROS node for running this on a UR5. Please keep in mind that this is messy research code and should be used with caution! Also, some parameters are hardware-specific: it is not guaranteed to work on all UR5 models.
+The Robot/ folder is a ROS node for running this on a UR5. Please keep in mind that this is messy, unmaintained research code and should be used with caution! Also, some parameters are hardware-specific: it is not guaranteed to work on all UR5 models.
 
 ## Review
 
