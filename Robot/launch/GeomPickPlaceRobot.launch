@@ -1,0 +1,29 @@
+<launch>
+  <!-- parameters-->
+  <arg name="rviz_config" default="$(find GeomPickPlaceRobot)/rviz/GeomPickPlaceRobot.rviz"/>
+  
+  <!--RViz-->
+  <arg name="limited" default="false"/>
+
+  <!-- load the URDF, SRDF and other .yaml configuration files on the param server -->
+  <include file="$(find ur5_moveit_config)/launch/planning_context.launch">
+    <arg name="load_robot_description" value="true"/>
+  </include>
+
+  <!-- run the main MoveIt executable without trajectory execution (we do not have controllers configured by default) -->
+  <include file="$(find ur5_moveit_config)/launch/move_group.launch">
+    <arg name="allow_trajectory_execution" value="false"/>  
+    <arg name="fake_execution" value="false"/>
+    <arg name="info" value="true"/>
+  </include>
+
+  <!-- Run Rviz and load the default config to see the state of the move_group node -->
+  <node name="$(anon rviz)" launch-prefix="" pkg="rviz" type="rviz" respawn="false"
+	args="-d $(arg rviz_config)" output="screen" />
+  <!-- End RViz -->
+  
+  <!-- add structure_link to tf -->
+  <!-- <node name="add_sensor_frame" pkg="GeomPickPlaceRobot" type="add_sensor_frame.py" output="screen" /> -->
+  
+</launch>
+

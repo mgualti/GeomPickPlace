@@ -1,0 +1,132 @@
+<Environment>
+  <camtrans>2.297793 0.004027 1.407393</camtrans>
+  <camrotationaxis>-0.658968 -0.653090 0.373141 138.362299</camrotationaxis>
+  <camfocal>2.594761</camfocal>
+  
+  <!-- Robot -->
+  <Robot file="ur5_with_gripper_85.xml" name="ur5">
+    <Translation>0.000 0.000 0.000</Translation>
+    <JointValues>0 -1.5707 0 0 0 0 0</JointValues>
+  </Robot>
+    
+  <!-- Sensor -->
+  <Robot name="sensor">
+    
+    <Translation>0.0 0.0 1.00</Translation>
+    
+    <KinBody>
+      <Body name="sensor_base" type="dynamic">
+        <Geom type="box" modifiable="false">
+          <Extents>0.005 0.005 0.005</Extents>
+          <Translation>0.00 0.00 -0.01</Translation>
+          <diffuseColor>0.50 0.50 0.00</diffuseColor>
+        </Geom>
+      </Body>
+    </KinBody>
+    
+    <AttachedSensor name="sensor">
+      <link>sensor_base</link>
+      <sensor type="BaseFlashLidar3D">
+        <maxrange>5</maxrange>
+        <scantime>0.0</scantime>
+        <color>1 1 0</color>
+        <!-- (KK[0] 0 KK[2]; 0 KK[1] KK[3]; 0 0 1] -->
+        <!-- rostopic echo /camera/ir/camera_info -->
+        <!-- K: [568.1509399414062, 0.0, 319.5, 0.0, 568.1509399414062, 239.5, 0.0, 0.0, 1.0] -->
+        <!-- https://www.vision.caltech.edu/bouguetj/calib_doc/htmls/parameters.html -->
+        <KK>220 220 64 64</KK> 
+        <width>128</width>
+        <height>128</height>
+      </sensor>
+    </AttachedSensor>
+  </Robot>
+  
+  <!-- UR5 Mount -->
+  <KinBody name="mount">
+    <Body type="static">
+      <Translation>-0.02 0.00 -0.085</Translation>
+      <Geom type="box">
+        <extents>0.0925 0.1525 0.0800</extents>
+        <translation>0 0 0</translation>
+        <diffuseColor>0.4 0.7 0.4</diffuseColor>
+      	<ambientColor>0.4 0.7 0.4</ambientColor>
+      </Geom>
+    </Body>
+  </KinBody>
+  
+  <!-- Sensor Mount -->
+  <KinBody name="sensor_mount_1">
+    <Body type="static">
+      <Translation>0.700 0.470 -0.135</Translation>
+      <Geom type="box">
+        <extents>0.250 0.025 0.03</extents>
+        <translation>0 0 0</translation>
+        <diffuseColor>0.4 0.7 0.4</diffuseColor>
+      	<ambientColor>0.4 0.7 0.4</ambientColor>
+      </Geom>
+    </Body>
+  </KinBody>
+  
+  <KinBody name="sensor_mount_2">
+    <Body type="static">
+      <Translation>0.700 0.4525 0.3500</Translation>
+      <Geom type="box">
+        <extents>0.0250 0.0075 0.500</extents>
+        <translation>0 0 0</translation>
+        <diffuseColor>0.4 0.7 0.4</diffuseColor>
+      	<ambientColor>0.4 0.7 0.4</ambientColor>
+      </Geom>
+    </Body>
+  </KinBody>
+  
+  <KinBody name="sensor_mount_3">
+    <Body type="static">
+      <Translation>0.700 0.285 0.815</Translation>
+      <Geom type="box">
+        <extents>0.0250 0.1750 0.0075</extents>
+        <translation>0 0 0</translation>
+        <diffuseColor>0.4 0.7 0.4</diffuseColor>
+      	<ambientColor>0.4 0.7 0.4</ambientColor>
+      </Geom>
+    </Body>
+  </KinBody>
+  
+  <KinBody name="sensor_mount_4">
+    <Body type="static">
+      <Translation>0.660 0.135 0.7725</Translation>
+      <Geom type="box">
+        <extents>0.0175 0.06 0.05</extents>
+        <translation>0 0 0</translation>
+        <diffuseColor>0.4 0.7 0.4</diffuseColor>
+      	<ambientColor>0.4 0.7 0.4</ambientColor>
+      </Geom>
+    </Body>
+  </KinBody>
+  
+  <!-- Wall -->
+  <KinBody name="wall">
+    <Body type="static">
+      <Translation>0.00 1.00 0.00</Translation>
+      <Geom type="box">
+        <extents>1.00 0.005 1.00</extents>
+        <translation>0 0 0</translation>
+        <diffuseColor>0.4 0.4 0.7</diffuseColor>
+      	<ambientColor>0.4 0.4 0.7</ambientColor>
+      </Geom>
+    </Body>
+  </KinBody>
+    
+  <!-- Table -->
+  <KinBody name="table">
+    <Body type="static">
+      <Translation>0.605 0.000 -0.170</Translation>
+      <Geom type="box">
+        <extents>0.685 0.535 0.005</extents>
+        <translation>0 0 0</translation>
+        <diffuseColor>0.6 0.6 0.6</diffuseColor>
+      	<ambientColor>0.6 0.6 0.6</ambientColor>
+      </Geom>
+    </Body>
+  </KinBody>
+
+</Environment>

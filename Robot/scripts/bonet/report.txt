@@ -1,0 +1,57 @@
+TensorFlow 2.0 Upgrade Script
+-----------------------------
+Converted 1 files
+Detected 0 issues that require attention
+--------------------------------------------------------------------------------
+================================================================================
+Detailed log follows:
+
+================================================================================
+--------------------------------------------------------------------------------
+Processing file 'main_3D_BoNet.py'
+ outputting to 'main_3D_BoNet.py'
+--------------------------------------------------------------------------------
+
+52:17: INFO: Added keywords to args of function 'tf.reduce_min'
+53:17: INFO: Added keywords to args of function 'tf.reduce_max'
+65:12: INFO: Added keywords to args of function 'tf.shape'
+100:16: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+101:20: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+102:19: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+103:20: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+104:14: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+107:9: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+110:9: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+122:32: INFO: tf.summary.scalar requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+122:32: INFO: Renamed 'tf.summary.scalar' to 'tf.compat.v1.summary.scalar'
+123:35: INFO: tf.summary.scalar requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+123:35: INFO: Renamed 'tf.summary.scalar' to 'tf.compat.v1.summary.scalar'
+124:35: INFO: tf.summary.scalar requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+124:35: INFO: Renamed 'tf.summary.scalar' to 'tf.compat.v1.summary.scalar'
+125:36: INFO: tf.summary.scalar requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+125:36: INFO: Renamed 'tf.summary.scalar' to 'tf.compat.v1.summary.scalar'
+126:33: INFO: tf.summary.scalar requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+126:33: INFO: Renamed 'tf.summary.scalar' to 'tf.compat.v1.summary.scalar'
+128:9: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+134:28: INFO: tf.summary.scalar requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+134:28: INFO: Renamed 'tf.summary.scalar' to 'tf.compat.v1.summary.scalar'
+136:9: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+142:35: INFO: Renamed 'tf.trainable_variables' to 'tf.compat.v1.trainable_variables'
+144:30: INFO: Renamed 'tf.trainable_variables' to 'tf.compat.v1.trainable_variables'
+145:31: INFO: Renamed 'tf.trainable_variables' to 'tf.compat.v1.trainable_variables'
+146:32: INFO: Renamed 'tf.trainable_variables' to 'tf.compat.v1.trainable_variables'
+149:17: INFO: Renamed 'tf.train.AdamOptimizer' to 'tf.compat.v1.train.AdamOptimizer'
+153:17: INFO: Renamed 'tf.train.Saver' to 'tf.compat.v1.train.Saver'
+154:13: INFO: Renamed 'tf.ConfigProto' to 'tf.compat.v1.ConfigProto'
+156:16: INFO: Renamed 'tf.Session' to 'tf.compat.v1.Session'
+157:18: INFO: Renamed 'tf.global_variables_initializer' to 'tf.compat.v1.global_variables_initializer'
+164:16: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+165:20: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+166:9: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+168:9: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+170:9: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+175:13: INFO: Renamed 'tf.ConfigProto' to 'tf.compat.v1.ConfigProto'
+177:16: INFO: Renamed 'tf.Session' to 'tf.compat.v1.Session'
+178:4: INFO: Renamed 'tf.train.Saver' to 'tf.compat.v1.train.Saver'
+--------------------------------------------------------------------------------
+

@@ -29,6 +29,10 @@ Next, from the Simulation directory, open N terminals and run python/worker\_\*.
 
 Then, from the Simulation directory, edit python/place\_\*.py, and set showViewer = True and showSteps = True. This will visualize the simulation, which is important for the first time running it. Then, run python/place\_\*.py. If everything is satisfactory, set showViewer = False and showSteps = False and run the scenario. A mat file will be produced with the results. See the matlab folder for scripts for processing the results.
 
+## Robot
+
+A ROS node for running this on a UR5. Please keep in mind that this is messy research code and should be used with caution! Also, some parameters are hardware-specific: it is not guaranteed to work on all UR5 models.
+
 ## Review
 
 Check python/geom_pick_place/planner_regrasp.py for how the regrasp planner works. (It is pretty well documented.) This class is inherited by SP and MC regrasp planners. Check environment\_\*.py for how the grasp and placement conditions are evaluated. Open a new issue if any difficulties are encountered reproducing the results.
