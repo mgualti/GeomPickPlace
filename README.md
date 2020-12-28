@@ -31,7 +31,9 @@ Then, from the Simulation directory, edit python/place\_\*.py, and set showViewe
 
 ## Running on a Real Robot
 
-The Robot/ folder is a ROS node for running this on a UR5. Please keep in mind that this is messy, unmaintained research code and should be used with caution! Also, some parameters are hardware-specific: it is not guaranteed to work on all UR5 models.
+The Robot/ folder is a ROS node for running this on a UR5. This depends on the UR ROS driver (https://github.com/UniversalRobots/Universal_Robots_ROS_Driver). Use this experimental code with caution as it has been tested with only one robot arm. Start with low speeds and low acceleration (/Robot/scripts/robot/arm.py). Much of the code has been adapted from the Simulation folder. Copy Simulation/tensorflow/models to Robot/tensorflow/models. (Except, for bottles, set addSensorNoise=True in generate_segmentations_bottles.py and retrain BoNet with simulated sensor noise. For blocks, use the BoNet model trained for packing.)
+
+Our experimental results, along with Amazon links for most test objects, are in the /Robot/notes folder.
 
 ## Review
 
