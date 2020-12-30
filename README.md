@@ -43,4 +43,6 @@ Our experimental results, along with Amazon links for most test objects, are in 
 
 ## Review
 
-Check python/geom_pick_place/planner_regrasp.py for how the regrasp planner works. (It is pretty well documented.) This class is inherited by SP and MC regrasp planners. Check environment\_\*.py for how the grasp and placement conditions are evaluated. Open a new issue if any difficulties are encountered reproducing the results.
+Check python/geom_pick_place/planner_regrasp.py for how the regrasp planner works. Also, it is inherited by SP and MC regrasp planners, which evaluate grasp and placement costs differently. Check environment\_\*.py for how the grasp and placement conditions are evaluated in the simulation results.
+
+See /Notes/supplamental.pdf for tables of our simulation and real-world results. Open a new issue if any difficulties are encountered reproducing the results.
