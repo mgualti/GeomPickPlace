@@ -5,6 +5,8 @@ Code for reproducing experiments for the paper "Pick-and-Place With Uncertain Ob
 * **Authors:** Marcus Gualteri
 * **Version:** 1.0.0
 
+<a href="https://youtu.be/OBGf7L3iKsM" target="_blank"><img src="Notes/figures/play-video.png" height="240"/></a>
+
 ## Prerequisites
 
 Tensorflow 2.1.0 (https://www.tensorflow.org/install), PointCloudsPython (https://github.com/mgualti/PointCloudsPython), and OpenRAVE (https://github.com/rdiankov/openrave) are required. These instructions for installing OpenRAVE were helpful: https://scaron.info/teaching/installing-openrave-on-ubuntu-16.04.html. PointCloudsPython requires PCL, and we used the version that comes with ROS Kinetic. Matlab is used for plotting results, but this is not a strict requirement. The code was tested on Ubuntu 16.04.
@@ -33,7 +35,11 @@ Then, from the Simulation directory, edit python/place\_\*.py, and set showViewe
 
 The Robot/ folder is a ROS node for running this on a UR5. This depends on the UR ROS driver (https://github.com/UniversalRobots/Universal_Robots_ROS_Driver). Use this experimental code with caution as it has been tested with only one robot arm. Start with low speeds and low acceleration (/Robot/scripts/robot/arm.py). Much of the code has been adapted from the Simulation folder. Copy Simulation/tensorflow/models to Robot/tensorflow/models. (Except, for bottles, set addSensorNoise=True in generate_segmentations_bottles.py and retrain BoNet with simulated sensor noise. For blocks, use the BoNet model trained for packing.)
 
+<img src="Notes/figures/packing-setup.png" height=170px/>
+
 Our experimental results, along with Amazon links for most test objects, are in the /Robot/notes folder.
+
+<img src="Notes/figures/packing-objects.png" height=170px/>
 
 ## Review
 
